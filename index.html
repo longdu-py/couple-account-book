@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蛋蛋♥菜菜专属记账本 - 登录</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+    <div class="login-card">
+        <div class="love-icon">💑</div>
+        <h1>夫妻暖心记账本</h1>
+        <p>记录我们小家每一笔收支</p>
+        <div class="input-wrap">
+            <input type="password" id="pwdInput" placeholder="请输入家庭密码">
+            <button id="loginBtn">进入账本</button>
+        </div>
+        <div class="tip">默认密码：1314520，可在主页修改</div>
+    </div>
+
+<script>
+    const pwdInput = document.getElementById('pwdInput');
+    const loginBtn = document.getElementById('loginBtn');
+    const correctPwd = localStorage.getItem('familyPwd') || '1314520';
+
+    loginBtn.onclick = () => {
+        if(pwdInput.value === correctPwd){
+            localStorage.setItem('isLogin', 'true');
+            location.href = 'home.html';
+        }else{
+            alert('密码错误，重新输入~');
+            pwdInput.value = '';
+        }
+    }
+    pwdInput.onkeydown = e => {
+        if(e.key === 'Enter') loginBtn.click();
+    }
+</script>
+</body>
+</html>
