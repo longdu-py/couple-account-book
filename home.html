@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夫妻记账 - 小家账本</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="home-body">
+<div class="container">
+    <!-- 顶部导航 -->
+    <header class="top-nav">
+        <h2>💞 我们的小家记账</h2>
+        <div class="nav-btn-group">
+            <button id="changePwdBtn">修改登录密码</button>
+            <button id="logoutBtn">退出登录</button>
+        </div>
+    </header>
+
+    <!-- 月度总览卡片 -->
+    <div class="total-card">
+        <div class="item">
+            <p>本月总收入</p>
+            <h3 id="monthIncome">0.00</h3>
+        </div>
+        <div class="item">
+            <p>本月总支出</p>
+            <h3 id="monthPay">0.00</h3>
+        </div>
+        <div class="item">
+            <p>本月结余</p>
+            <h3 id="monthSurplus">0.00</h3>
+        </div>
+        <div class="item">
+            <p>月度预算</p>
+            <h3 id="monthBudget">0.00</h3>
+        </div>
+    </div>
+
+    <!-- 设置预算 -->
+    <div class="budget-box">
+        <input type="number" id="budgetInput" placeholder="设置本月支出预算">
+        <button id="saveBudget">保存预算</button>
+        <span id="budgetTip"></span>
+    </div>
+
+    <!-- 新增账单表单 -->
+    <div class="add-bill-box">
+        <h3>添加一笔收支</h3>
+        <div class="radio-group">
+            <label><input type="radio" name="type" value="income" checked> 收入</label>
+            <label><input type="radio" name="type" value="pay"> 支出</label>
+        </div>
+        <input type="number" id="moneyInput" placeholder="金额" step="0.01" min="0">
+        <select id="cateSelect">
+            <optgroup label="收入分类">
+                <option value="工资">工资薪资</option>
+                <option value="奖金">奖金分红</option>
+                <option value="兼职">兼职副业</option>
+                <option value="红包">红包礼金</option>
+                <option value="其他收入">其他收入</option>
+            </optgroup>
+            <optgroup label="支出分类">
+                <option value="餐饮">餐饮美食</option>
+                <option value="住房">房租房贷</option>
+                <option value="交通">交通出行</option>
+                <option value="购物">日用购物</option>
+                <option value="医疗">医疗健康</option>
+                <option value="人情">人情往来</option>
+                <option value="娱乐">休闲娱乐</option>
+                <option value="育儿">育儿开销</option>
+                <option value="其他支出">其他支出</option>
+            </optgroup>
+        </select>
+        <input type="date" id="dateInput">
+        <input type="text" id="descInput" placeholder="备注（例如：买菜、夫妻聚餐）">
+        <button id="addBillBtn">保存账单</button>
+    </div>
+
+    <!-- 统计图表 -->
+    <div class="chart-box">
+        <h3>本月支出分类占比</h3>
+        <canvas id="payChart"></canvas>
+    </div>
+
+    <!-- 操作按钮：导出/导入 -->
+    <div class="data-tool">
+        <button id="exportData">导出账单备份</button>
+        <button id="importData">导入备份文件</button>
+        <input type="file" id="fileInput" accept=".json" hidden>
+        <button id="clearAll">清空全部账单（谨慎）</button>
+    </div>
+
+    <!-- 账单列表 -->
+    <div class="bill-list-box">
+        <h3>全部账单记录</h3>
+        <div id="billList"></div>
+    </div>
+</div>
+
+<!-- 修改密码弹窗 -->
+<div class="mask" id="pwdMask">
+    <div class="mask-card">
+        <h4>修改家庭登录密码</h4>
+        <input type="password" id="oldPwd" placeholder="原密码">
+        <input type="password" id="newPwd" placeholder="新密码">
+        <input type="password" id="newPwd2" placeholder="确认新密码">
+        <div class="mask-btn">
+            <button id="closeMask">取消</button>
+            <button id="confirmPwd">确认修改</button>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
