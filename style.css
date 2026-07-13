@@ -1,0 +1,318 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei",sans-serif;
+}
+/* 登录页 */
+.login-body{
+    min-height: 100vh;
+    background: linear-gradient(135deg,#ffe6ef,#ffd6e4,#fff0f6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-card{
+    width: 90%;
+    max-width: 420px;
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px #ffb8cc60;
+    text-align: center;
+}
+.love-icon{
+    font-size: 60px;
+    margin-bottom:10px;
+}
+.login-card h1{
+    color:#d65c88;
+    margin-bottom:8px;
+    font-size:26px;
+}
+.login-card p{
+    color:#997;
+    margin-bottom:30px;
+}
+.input-wrap{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+#pwdInput{
+    padding:14px 16px;
+    border:1px solid #ffc8dd;
+    border-radius:12px;
+    font-size:16px;
+    outline:none;
+}
+#pwdInput:focus{
+    border-color:#d65c88;
+}
+#loginBtn{
+    padding:14px;
+    border:none;
+    background:linear-gradient(90deg,#e8729c,#d65c88);
+    color:#fff;
+    border-radius:12px;
+    font-size:17px;
+    cursor:pointer;
+    transition:0.3s;
+}
+#loginBtn:hover{
+    opacity:0.9;
+}
+.tip{
+    margin-top:20px;
+    font-size:13px;
+    color:#bb9;
+}
+
+/* 记账主页 */
+.home-body{
+    background:#fff5f8;
+    color:#444;
+    padding-bottom:40px;
+}
+.container{
+    max-width:1000px;
+    margin:0 auto;
+    padding:15px;
+}
+.top-nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+    background:#fff;
+    border-radius:16px;
+    margin-bottom:20px;
+    box-shadow:0 4px 12px #ffd0e040;
+}
+.top-nav h2{
+    color:#d65c88;
+}
+.nav-btn-group button{
+    margin-left:10px;
+    padding:7px 12px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+#logoutBtn{
+    background:#ffd6e0;
+    color:#c04068;
+}
+#changePwdBtn{
+    background:#ffe8ef;
+    color:#d65c88;
+}
+
+/* 月度总览卡片 */
+.total-card{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+    gap:12px;
+    margin-bottom:20px;
+}
+.total-card .item{
+    background:#fff;
+    padding:20px 10px;
+    text-align:center;
+    border-radius:14px;
+    box-shadow:0 3px 10px #ffd0e030;
+}
+.total-card .item p{
+    color:#997;
+    font-size:14px;
+    margin-bottom:8px;
+}
+#monthIncome{color:#28a745;}
+#monthPay{color:#dc3545;}
+#monthSurplus{color:#d65c88;}
+#monthBudget{color:#667eea;}
+
+/* 预算设置 */
+.budget-box{
+    background:#fff;
+    padding:14px;
+    border-radius:14px;
+    margin-bottom:20px;
+    display:flex;
+    gap:10px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+#budgetInput{
+    padding:10px;
+    border:1px solid #ffd0e0;
+    border-radius:8px;
+    width:180px;
+}
+#saveBudget{
+    padding:10px 16px;
+    border:none;
+    background:#d65c88;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+#budgetTip{color:#d65c88; font-size:14px;}
+
+/* 新增账单 */
+.add-bill-box{
+    background:#fff;
+    padding:22px;
+    border-radius:16px;
+    margin-bottom:20px;
+    box-shadow:0 4px 12px #ffd0e030;
+}
+.add-bill-box h3{
+    color:#d65c88;
+    margin-bottom:16px;
+}
+.radio-group{
+    margin-bottom:14px;
+}
+.radio-group label{
+    margin-right:20px;
+    cursor:pointer;
+}
+.add-bill-box input,.add-bill-box select{
+    display:block;
+    width:100%;
+    padding:12px;
+    margin-bottom:12px;
+    border:1px solid #ffd0e0;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+}
+#addBillBtn{
+    width:100%;
+    padding:13px;
+    border:none;
+    background:linear-gradient(90deg,#e8729c,#d65c88);
+    color:#fff;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* 图表区域 */
+.chart-box{
+    background:#fff;
+    padding:20px;
+    border-radius:16px;
+    margin-bottom:20px;
+}
+.chart-box h3{
+    color:#d65c88;
+    margin-bottom:15px;
+}
+#payChart{
+    max-height:350px;
+}
+
+/* 数据操作按钮 */
+.data-tool{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+.data-tool button{
+    padding:9px 14px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+#exportData{background:#e6f7ff;color:#0066cc;}
+#importData{background:#f0fff4;color:#28a745;}
+#clearAll{background:#fff2f2;color:#dc3545;}
+
+/* 账单列表 */
+.bill-list-box{
+    background:#fff;
+    padding:20px;
+    border-radius:16px;
+}
+.bill-list-box h3{
+    color:#d65c88;
+    margin-bottom:15px;
+}
+.bill-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 10px;
+    border-bottom:1px solid #ffe6ef;
+}
+.bill-item:last-child{border:none;}
+.bill-left .cate{
+    font-weight:bold;
+    margin-right:10px;
+}
+.bill-left .desc{
+    font-size:13px;
+    color:#999;
+}
+.bill-right{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+.del-btn{
+    color:#dc3545;
+    background:none;
+    border:none;
+    cursor:pointer;
+}
+.income-text{color:#28a745;}
+.pay-text{color:#dc3545;}
+
+/* 修改密码弹窗 */
+.mask{
+    position:fixed;
+    top:0;left:0;
+    width:100%;height:100%;
+    background:#00000050;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:999;
+}
+.mask-card{
+    width:90%;
+    max-width:360px;
+    background:#fff;
+    padding:25px;
+    border-radius:16px;
+}
+.mask-card h4{
+    color:#d65c88;
+    margin-bottom:16px;
+    text-align:center;
+}
+.mask-card input{
+    width:100%;
+    padding:11px;
+    margin-bottom:12px;
+    border:1px solid #ffd0e0;
+    border-radius:10px;
+    outline:none;
+}
+.mask-btn{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+.mask-btn button{
+    flex:1;
+    padding:11px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+#closeMask{background:#eee;}
+#confirmPwd{background:#d65c88;color:#fff;}
